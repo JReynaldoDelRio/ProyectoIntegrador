@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <title>Login Form Design One | Fazt</title>
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    	
+    <div class="login-box">
+      <img src="img/logo.jpg" class="avatar" alt="Avatar Image">
+      <h1>Login Here</h1>
+      <form th:action="@{/login}" method="post">
+        <!-- USERNAME INPUT -->
+        <label for="username">Username</label>
+         <input type="number" name="idalmacenero" placeholder="Enter Username">
+        <!-- PASSWORD INPUT -->
+        <label for="password">Password</label>
+         <input type="password" name="clave" placeholder="Enter Password">
+        <input type="submit" value="Log In">
+        <a href="#">Lost your Password?</a><br>
+        <a href="#">Don't have An account?</a>
+        
+        <th:block th:if="${error}">
+        <p class="error" th:text="${error}" color="red"></p>
+    	</th:block>
+      </form>
+    </div>
+  </body>
+</html>
